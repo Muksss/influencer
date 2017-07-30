@@ -26,14 +26,9 @@ public class HelloController {
 	@RequestMapping(value = "/hello/{name:.+}", method = RequestMethod.GET)
 	public ModelAndView hello(@PathVariable("name") String name) {
 
-		Person p = new Person();
-		p.setCountry("India");
-		p.setName("muks");
-		personDAO.save(p);
-
 		ModelAndView model = new ModelAndView();
 		model.setViewName("hello");
-		model.addObject("msg", name);
+		model.addObject("name", personDAO.list().get(0).getName());
 
 		return model;
 
