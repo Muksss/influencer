@@ -10,17 +10,11 @@
 		<servlet-name>spring-web</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
-		<!-- 
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring-mvc-config.xml</param-value>
-		</init-param>
-		 -->
 	</servlet>
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>WEB-INF/applicationcontext.xml</param-value>
+		<param-value>WEB-INF/applicationContext.xml</param-value>
 	</context-param>
 
 	<listener>
