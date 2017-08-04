@@ -8,10 +8,11 @@ public class Keyword {
 
     static {
         //Politics
-        add("Indiafirst", CategoryEnum.POLITICS);
+        add("indiafirst", CategoryEnum.POLITICS);
 
         //Travel
-        add("Indiafirst", CategoryEnum.POLITICS);
+        add("lifestyle", CategoryEnum.FASHION);
+        add("fashion", CategoryEnum.FASHION);
     }
 
     private static void add(String keyword, CategoryEnum category) {
@@ -19,6 +20,6 @@ public class Keyword {
     }
 
     public static CategoryEnum getCatagory(String keyword) {
-        return dataHolder.get(keyword);
+        return dataHolder.get(keyword.toLowerCase());
     }
 }

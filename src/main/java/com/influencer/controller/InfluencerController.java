@@ -29,7 +29,7 @@ public class InfluencerController {
 	@RequestMapping(value = "/list/{name:.+}", method = RequestMethod.GET)
 	public ModelAndView hello(@PathVariable("name") String name) throws TwitterException {
 
-		twitterRestClient.fetchUserInfo(name);
+		twitterRestClient.calculateScore(name);
 
 		ModelAndView model = new ModelAndView();
 		model.setViewName("hello");
