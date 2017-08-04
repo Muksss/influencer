@@ -4,6 +4,6 @@ public enum CategoryEnum {
     POLITICS,
     FOOD,
     HEALTH,
-    FASION,
+    FASHION,
     TRAVEL
 }

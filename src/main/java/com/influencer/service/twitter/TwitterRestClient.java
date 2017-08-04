@@ -11,10 +11,6 @@ import java.util.Iterator;
 public class TwitterRestClient {
     private Twitter twitter = new TwitterFactory().getInstance();
 
-    public Twitter getTwitter() {
-        return twitter;
-    }
-
     public CategoryScore calculateScore(String screenName) throws TwitterException {
         CategoryScore score = getCategoryScoreFromTweets(screenName);
         score.merge(getCategoryScoreFromDescription(screenName));
@@ -44,8 +40,11 @@ public class TwitterRestClient {
     }
 
     public static void main(String[] args) throws TwitterException {
-        TwitterRestClient twitterRestClient = new TwitterRestClient();
-        CategoryScore score = twitterRestClient.calculateScore("MissMalini");
-        System.out.println("");
+//        TwitterRestClient twitterRestClient = new TwitterRestClient();
+//        CategoryScore score = twitterRestClient.calculateScore("MissMalini");
+        String s = "Catch @iaashkagoradia and Brent Globe LIVE on Facebook with @oranzeplum at 12pm tomorrow! See you there :)";
+
+        for(String s1:s.split(TextParser.DELIMETER))
+        System.out.println(s1);
     }
 }
