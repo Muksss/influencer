@@ -1,11 +1,13 @@
 package com.influencer.service.twitter;
 
+import com.influencer.constant.CategoryEnum;
 import com.influencer.model.CategoryScore;
 import com.influencer.parser.TextParser;
 import org.springframework.stereotype.Service;
 import twitter4j.*;
 
 import java.util.Iterator;
+import java.util.Map;
 
 @Service
 public class TwitterRestClient {
@@ -40,11 +42,11 @@ public class TwitterRestClient {
     }
 
     public static void main(String[] args) throws TwitterException {
-//        TwitterRestClient twitterRestClient = new TwitterRestClient();
-//        CategoryScore score = twitterRestClient.calculateScore("MissMalini");
-        String s = "Catch @iaashkagoradia and Brent Globe LIVE on Facebook with @oranzeplum at 12pm tomorrow! See you there :)";
+        TwitterRestClient twitterRestClient = new TwitterRestClient();
+        CategoryScore score = twitterRestClient.calculateScore("MissMalini");
 
-        for(String s1:s.split(TextParser.DELIMETER))
-        System.out.println(s1);
+        for(Map.Entry<CategoryEnum, Integer> entry : score.getScoreMap().entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
     }
 }

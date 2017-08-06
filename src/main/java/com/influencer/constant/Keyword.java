@@ -7,6 +7,10 @@ public class Keyword {
     private static Map<String, CategoryEnum> dataHolder = new HashMap<>();
 
     static {
+        init();
+    }
+
+    private static void init() {
         //Politics
         add("indiafirst", CategoryEnum.POLITICS);
         add("GST", CategoryEnum.POLITICS);
