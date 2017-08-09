@@ -3,6 +3,7 @@ package com.influencer.service.twitter;
 import com.influencer.constant.CategoryEnum;
 import com.influencer.model.CategoryScore;
 import com.influencer.parser.TextParser;
+import com.influencer.service.excel.ExcelManager;
 import org.springframework.stereotype.Service;
 import twitter4j.*;
 
@@ -41,12 +42,4 @@ public class TwitterRestClient {
         return TextParser.parseText(user.getDescription(), new CategoryScore());
     }
 
-    public static void main(String[] args) throws TwitterException {
-        TwitterRestClient twitterRestClient = new TwitterRestClient();
-        CategoryScore score = twitterRestClient.calculateScore("MissMalini");
-
-        for(Map.Entry<CategoryEnum, Integer> entry : score.getScoreMap().entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
-        }
-    }
 }
